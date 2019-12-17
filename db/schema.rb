@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_11_031351) do
+ActiveRecord::Schema.define(version: 2019_12_16_091330) do
+
+  create_table "plots", force: :cascade do |t|
+    t.string "plot_Name"
+    t.string "plot_area"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "states", force: :cascade do |t|
     t.string "state_name"

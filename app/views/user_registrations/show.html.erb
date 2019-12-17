@@ -1,15 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 
-<p>
-  <strong>User Name:</strong>
-  <%= @user_registration.user_name %>
-</p>
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading"> <h4>User Details</h4></div>
+			<div class="panel-body">
+				<p>
+  				<strong>User Name:</strong>
+				  <%= @user_registration.user_name %>
+				</p>
  
-<p>
-  <strong>Address:</strong>
-  <%= @user_registration.address %>
-</p>
+				<p>
+				  <strong>Address:</strong>
+				  <%= @user_registration.address %>
+				</p>
 
-<%= link_to 'Edit', edit_user_registration_path(@user_registration),class: "btn btn-success" %> 
-<%= link_to 'Back', user_registrations_path , class: "btn btn-primary" %>
+				<%= link_to 'Edit', edit_user_registration_path(@user_registration),class: "btn btn-success" %> 
+				<%= link_to 'Back', user_registrations_path , class: "btn btn-primary" %>
+			</div>
+		</div>
+	</div>
+</div>

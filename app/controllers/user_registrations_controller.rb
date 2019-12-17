@@ -5,6 +5,10 @@ class UserRegistrationsController < ApplicationController
   # GET /user_registrations.json
   def index
     @user_registrations = UserRegistration.all
+    puts"============ Index ================"
+    puts @user_registrations.to_json
+    puts"============================"
+
   end
 
   # GET /user_registrations/1
@@ -25,7 +29,7 @@ class UserRegistrationsController < ApplicationController
   # POST /user_registrations.json
   def create
     @user_registration = UserRegistration.new(user_registration_params)
-    puts"============================"
+    puts"=========== Create ================="
     puts @user_registration.to_json
     puts"============================"
 
@@ -46,6 +50,9 @@ class UserRegistrationsController < ApplicationController
   # PATCH/PUT /user_registrations/1.json
   def update
     respond_to do |format|
+      puts "*********** update ******************"
+      puts user_registration_params
+      puts "*****************************"
       if @user_registration.update(user_registration_params)
         format.html { redirect_to @user_registration, notice: 'User registration was successfully updated.' }
         format.json { render :show, status: :ok, location: @user_registration }
