@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :user_registrations
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :posts
+  # resources :posts
   resources :plots
 end

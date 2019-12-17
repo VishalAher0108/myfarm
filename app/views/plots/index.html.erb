@@ -1,0 +1,40 @@
+<div class="container" style="margin: 30px;">
+  <div class="panel panel-primary">
+    <div class="panel-heading"> <h4>Plots</h4></div>
+      <div class="panel-body">
+
+        <p id="notice"><%= notice %></p>
+
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th> Id </th>
+                <th> Plot name </th>
+                <th> Plot Area </th>
+                <th> Action </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @plots.each do |plot| %>
+                <tr>
+                  <td><%= plot.id %></td>
+                  <td><%= plot.plot_Name %></td>
+                  <td><%= plot.plot_area%></td>
+                  <td><%= link_to 'Show', plot , class: "btn btn-info"%></td>
+                  <td><%= link_to 'Edit', edit_plot_path(plot), class: "btn btn-primary" %></td>
+                  <td><%= link_to 'Destroy', plot, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <br>
+
+        <%= link_to 'New Plot', new_plot_path , class: "btn btn-success"%>
+        <%= link_to 'back to user Screen', user_registrations_path , class: "btn btn-success"%>
+      </div>
+    </div>
+  </div>
+</div>

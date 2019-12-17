@@ -1,0 +1,35 @@
+<%= form_with(model: plot, local: true) do |f| %>
+  <% if plot.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(plot.errors.count, "error") %> prohibited this plot from being saved:</h2>
+
+      <ul>
+        <% plot.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <div class="form-group col-xs-2">
+      <%= f.label :Plot_Name,"Plot Name" %>
+    </div>
+    <div class="form-group col-sm-10">
+      <%= f.text_field :plot_Name ,class: "form-control",placeholder: "Enter Plot Name" %>
+    </div>
+    <div class="form-group col-xs-2">
+      <%= f.label :plot_area, "Plot Area (Acre)" %>
+    </div>
+    <div class="form-group col-sm-10">
+      <%#= f.text_field :plot_area ,class: "form-control",placeholder: "Enter Plot Area" %>
+      <%#= f.number_field 'plot_area', nil, in: 1...10 %>
+      <%= f.number_field :plot_area, step: :any, class: "form-control" %>
+    </div>
+    
+    <div class="form-group col-xs-2">
+      <%= f.submit "Save" , class: "btn btn-success"%>
+    </div>
+
+  </div>
+<% end %>

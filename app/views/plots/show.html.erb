@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+	<div class="panel panel-primary">
+		<div class="panel-heading"> <h4>Plot Details</h4></div>
+			<div class="panel-body">
+
+				<p>
+  				<strong>Plot Name:</strong>
+				  <%= @plot.plot_Name %>
+				</p>
+ 
+				<p>
+				  <strong>Address:</strong>
+				  <%= @plot.plot_area %>
+				</p>
+
+				<%= link_to 'Edit', edit_plot_path(@plot) ,class: "btn btn-success"  %> 
+				<%= link_to 'Back', plots_path ,class: "btn btn-primary" %>
+			</div>
+		</div>
+	</div>
+</div>
